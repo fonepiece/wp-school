@@ -109,7 +109,7 @@ function fwd_setup() {
 	 */
 	add_theme_support( 'wp-block-styles' );
 	add_theme_support( 'responsive-embeds' );
-	// add_theme_support( 'align-wide' );
+	add_theme_support( 'align-wide' );
 }
 add_action( 'after_setup_theme', 'fwd_setup' );
 
@@ -147,6 +147,12 @@ function fwd_widgets_init() {
 	);
 }
 add_action( 'widgets_init', 'fwd_widgets_init' );
+
+
+/**
+* Custom Post Types & Taxonomies
+*/
+require get_template_directory() . '/inc/cpt-taxonomy.php';
 
 /**
  * Enqueue scripts and styles.

@@ -1306,7 +1306,6 @@ svg path {
 }
 
 /* This code will NOT work properly if there is a sidebar on the left or right */
-/* 
 .alignwide,
 .alignfull {
 	display: block;
@@ -1326,4 +1325,3 @@ svg path {
 		margin-right: -150px;
 	}
 }
-*/
