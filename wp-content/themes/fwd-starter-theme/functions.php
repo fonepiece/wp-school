@@ -190,3 +190,18 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+function student_excerpt_length( $length ) {
+	global $post;
+    if ($post->post_type == 'student') {
+		return 25;
+	}
+	return $length;
+}
+add_filter( 'excerpt_length', 'student_excerpt_length', 999 );
+
+function student_excerpt_more( $more ) {
+    $more = '... <a class="read-more" href="' . esc_url( get_permalink() ) . '">Continue Reading</a>';
+    return $more;
+}
+add_filter( 'excerpt_more', 'student_excerpt_more' );

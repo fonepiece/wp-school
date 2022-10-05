@@ -116,7 +116,7 @@ add_action( 'init', 'fwd_register_custom_post_types' );
  */
 
 function fwd_register_taxonomies() {
-    // Add Faculty taxonomy
+    // Add Staff Faculty taxonomy
     $labels = array(
         'name'              => _x( 'Faculties', 'taxonomy general name' ),
         'singular_name'     => _x( 'Faculty', 'taxonomy singular name' ),
@@ -144,7 +144,7 @@ function fwd_register_taxonomies() {
     );
     register_taxonomy( 'faculty', array( 'staff' ), $args );
 
-    // Add Administrative taxonomy
+    // Add Staff Administrative taxonomy
     $labels = array(
             'name'              => _x( 'Administratives', 'taxonomy general name' ),
             'singular_name'     => _x( 'Administrative', 'taxonomy singular name' ),
@@ -171,6 +171,35 @@ function fwd_register_taxonomies() {
             'rewrite'           => array( 'slug' => 'administratives' ),
         );
         register_taxonomy( 'administrative', array( 'staff' ), $args );
+
+
+    // Add Student domain taxonomy
+    $labels = array(
+        'name'              => _x( 'Domains', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Domain', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Domains' ),
+        'all_items'         => __( 'All Domain' ),
+        'parent_item'       => __( 'Parent Domain' ),
+        'parent_item_colon' => __( 'Parent Domain:' ),
+        'edit_item'         => __( 'Edit Domain' ),
+        'view_item'         => __( 'View Domain' ),
+        'update_item'       => __( 'Update Domain' ),
+        'add_new_item'      => __( 'Add New Domain' ),
+        'new_item_name'     => __( 'New Domain Name' ),
+        'menu_name'         => __( 'Domain' ),
+    );
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_in_menu'      => true,
+        'show_in_nav_menu'  => true,
+        'show_in_rest'      => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'domains' ),
+    );
+    register_taxonomy( 'domain', array( 'student' ), $args );
 }
 add_action( 'init', 'fwd_register_taxonomies');
 

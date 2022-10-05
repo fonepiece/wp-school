@@ -42,21 +42,24 @@ function printStaff($taxonomy) {
                         if ( get_field( 'biography' ) ) {
                             the_field( 'biography' );
                         }
-                        if ( get_field( 'courses' ) ) {
-                            echo "<div>";
-                            echo "Courses:";
-                            the_field( 'courses' );
-                            echo "</div>";
-                        }
-                        if ( get_field( 'website' ) ) {
-                            ?>
-                            <div>
-                                Website:
-                                <a href="<?php echo the_field( 'website' ); ?>">
-                                    <?php echo the_field( 'website' ); ?>
-                                </a>
-                            </div>
-                            <?php
+
+                        if ($taxonomy === 'faculty') {
+                            if ( get_field( 'courses' ) ) {
+                                echo "<div>";
+                                echo "Courses:";
+                                the_field( 'courses' );
+                                echo "</div>";
+                            }
+                            if ( get_field( 'website' ) ) {
+                                ?>
+                                <div>
+                                    Website:
+                                    <a href="<?php echo the_field( 'website' ); ?>">
+                                        <?php echo the_field( 'website' ); ?>
+                                    </a>
+                                </div>
+                                <?php
+                            }
                         }
                     }
                 }
