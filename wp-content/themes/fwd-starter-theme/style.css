@@ -693,7 +693,6 @@ svg path {
 }
 
 .site-main {
-	overflow: hidden; /* Resolves issue with <pre> elements forcing full width. */
 	padding: 0 1rem;
 }
 

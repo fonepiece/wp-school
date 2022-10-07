@@ -20,11 +20,10 @@ get_header();
 				</a>
 				<?php the_content(); ?>
 
-				<?php echo "<div>Domain: " . get_the_terms($post->ID, 'domain')[0]->name . "</div>"; ?>
 				<?php the_post_thumbnail('featured'); ?>
 			</article>
 			<?php
-			endwhile
+			endwhile;
 			
 
 

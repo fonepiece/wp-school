@@ -116,20 +116,20 @@ add_action( 'init', 'fwd_register_custom_post_types' );
  */
 
 function fwd_register_taxonomies() {
-    // Add Staff Faculty taxonomy
+    // Add Staff Domain taxonomy
     $labels = array(
-        'name'              => _x( 'Faculties', 'taxonomy general name' ),
-        'singular_name'     => _x( 'Faculty', 'taxonomy singular name' ),
-        'search_items'      => __( 'Search Faculties' ),
-        'all_items'         => __( 'All Faculty' ),
-        'parent_item'       => __( 'Parent Faculty' ),
-        'parent_item_colon' => __( 'Parent Faculty:' ),
-        'edit_item'         => __( 'Edit Faculty' ),
-        'view_item'         => __( 'View Faculty' ),
-        'update_item'       => __( 'Update Faculty' ),
-        'add_new_item'      => __( 'Add New Faculty' ),
-        'new_item_name'     => __( 'New Faculty Name' ),
-        'menu_name'         => __( 'Faculty' ),
+        'name'              => _x( 'Staff Domains', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Staff Domain', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Staff Domains' ),
+        'all_items'         => __( 'All Staff Domain' ),
+        'parent_item'       => __( 'Parent Staff Domain' ),
+        'parent_item_colon' => __( 'Parent Staff Domain:' ),
+        'edit_item'         => __( 'Edit Staff Domain' ),
+        'view_item'         => __( 'View Staff Domain' ),
+        'update_item'       => __( 'Update Staff Domain' ),
+        'add_new_item'      => __( 'Add New Staff Domain' ),
+        'new_item_name'     => __( 'New Staff Domain Name' ),
+        'menu_name'         => __( 'Staff Domain' ),
     );
     $args = array(
         'hierarchical'      => true,
@@ -140,38 +140,9 @@ function fwd_register_taxonomies() {
         'show_in_rest'      => true,
         'show_admin_column' => true,
         'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'faculties' ),
+        'rewrite'           => array( 'slug' => 'staff-domains' ),
     );
-    register_taxonomy( 'faculty', array( 'staff' ), $args );
-
-    // Add Staff Administrative taxonomy
-    $labels = array(
-            'name'              => _x( 'Administratives', 'taxonomy general name' ),
-            'singular_name'     => _x( 'Administrative', 'taxonomy singular name' ),
-            'search_items'      => __( 'Search Administratives' ),
-            'all_items'         => __( 'All Administrative' ),
-            'parent_item'       => __( 'Parent Administrative' ),
-            'parent_item_colon' => __( 'Parent Administrative:' ),
-            'edit_item'         => __( 'Edit Administrative' ),
-            'view_item'         => __( 'View Administrative' ),
-            'update_item'       => __( 'Update Administrative' ),
-            'add_new_item'      => __( 'Add New Administrative' ),
-            'new_item_name'     => __( 'New Administrative Name' ),
-            'menu_name'         => __( 'Administrative' ),
-        );
-        $args = array(
-            'hierarchical'      => true,
-            'labels'            => $labels,
-            'show_ui'           => true,
-            'show_in_menu'      => true,
-            'show_in_nav_menu'  => true,
-            'show_in_rest'      => true,
-            'show_admin_column' => true,
-            'query_var'         => true,
-            'rewrite'           => array( 'slug' => 'administratives' ),
-        );
-        register_taxonomy( 'administrative', array( 'staff' ), $args );
-
+    register_taxonomy( 'staff-domains', array( 'staff' ), $args );
 
     // Add Student domain taxonomy
     $labels = array(

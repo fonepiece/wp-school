@@ -29,7 +29,7 @@ get_header();
                             </a>
                             <?php the_excerpt(); ?>
 
-							<?php echo "<div>Domain: " . get_the_terms($post->ID, 'domain')[0]->name . "</div>"; ?>
+							<?php echo "<div>Domain: <a href='" . get_term_link(get_the_terms($post->ID, 'domain')[0]) . "'>" . get_the_terms($post->ID, 'domain')[0]->name . "</a></div>"; ?>
 							<?php the_post_thumbnail('featured'); ?>
                         </article>
                         <?php

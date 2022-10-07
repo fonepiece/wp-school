@@ -4,28 +4,20 @@ get_header();
 
 	<main id="primary" class="site-main">
 
-		<?php
-		if ( have_posts() ) :
-		?>
-            <header class="entry-header">
-                <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-            </header>
-		<?php while ( have_posts() ) : ?>
-			<article>
-				<a href="<?php the_permalink(); ?>">
-					<h3><?php the_title(); ?></h3>
-				</a>
-				<?php the_post_thumbnail('featured'); ?>
-				<?php the_excerpt(); ?>
-			</article>
+	<?php
+		// Check rows existexists.
+		if( have_rows('schedule_row') ):
 
-		<?php endwhile; ?>
-		<?php
-			the_posts_navigation();
+			// Loop through rows.
+			while( have_rows('schedule_row') ) : the_row();
+
+				// $sub_value = get_sub_field('sub_field');
+				print_r(the_row());
+
+			// End loop.
+			endwhile;
 		endif;
-		?>
+	?>
 	</main>
-
 <?php
-get_sidebar();
 get_footer();
